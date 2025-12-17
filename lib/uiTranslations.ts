@@ -1,0 +1,45 @@
+
+export const UI_STRINGS = {
+  actions: {
+    create: "ساخت حرکت جدید",
+    edit: "ویرایش",
+    delete: "حذف",
+    save: "ذخیره و افزودن",
+    cancel: "انصراف",
+    duplicate: "کپی‌برداری",
+    select: "انتخاب",
+    filter: "فیلتر",
+    search: "جستجو (نام فارسی یا انگلیسی)...",
+    preview: "پیش‌نمایش",
+    back: "بازگشت به لیست",
+  },
+  labels: {
+    modalTitle: "بانک حرکات ورزشی",
+    tabLibrary: "کتابخانه رسمی",
+    tabCustom: "حرکات من",
+    movementNameEn: "نام حرکت (انگلیسی)",
+    movementNameFa: "نام حرکت (فارسی)",
+    category: "دسته‌بندی / عضله",
+    equipment: "تجهیزات",
+    difficulty: "سطح دشواری",
+    mechanics: "نوع تمرین",
+    defaults: "مقادیر پیش‌فرض",
+    sets: "تعداد ست",
+    reps: "تعداد تکرار",
+    rest: "استراحت (ثانیه)",
+    notes: "توضیحات / نکات اجرایی",
+    videoUrl: "لینک ویدیو آموزشی",
+  },
+  errors: {
+    requiredField: "این فیلد الزامی است.",
+    nameUnique: "حرکتی با این نام قبلاً ثبت شده است.",
+    invalidUrl: "لینک ویدیو معتبر نیست.",
+    deleteConfirmation: "آیا از حذف این حرکت اطمینان دارید؟",
+    systemProtected: "امکان ویرایش حرکات سیستمی وجود ندارد.",
+    saveSuccess: "حرکت با موفقیت ذخیره شد.",
+  },
+  emptyStates: {
+    noCustom: "هنوز حرکت اختصاصی نساخته‌اید.",
+    noResults: "نتیجه‌ای یافت نشد.",
+  }
+};

@@ -1,0 +1,27 @@
+{
+  "app": "my-fitpro",
+  "platform": "node",
+  "port": 4000,
+  "node": {
+    "version": "22",
+    "mirror": true,
+    "timezone": "Asia/Tehran"
+  },
+  "build": {
+    "location": "iran"
+  },
+  "disks": [
+    {
+      "name": "data",
+      "mountTo": "C:\\Users\\Aryan\\Downloads\\fit-pro.ir\\backend\\data"
+    }
+  ],
+  "healthCheck": {
+    "command": "node dist/server.js",
+    "interval": 30000,
+    "timeout": 5000,
+    "retries": 3,
+    "startPeriod": 1000
+  }
+}
+

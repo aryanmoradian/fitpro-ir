@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فیت پرو | اکوسیستم ورزشی حرفه‌ای</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 512%22%3E%3Cpath fill=%22%2358a6ff%22 d=%22M128 416H64a16 16 0 0 1-16-16V112a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v32a16 16 0 0 1-16-16H96v48h32a16 16 0 0 1 16 16v32a16 16 0 0 1-16-16H96v48h32a16 16 0 0 1 16 16v32a16 16 0 0 1-16-16z%22/%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+      :root {
+        /* -- TACTICAL SPORT PALETTE -- */
+        --fitpro-primary: #556B2F; /* Dark Olive Green */
+        --fitpro-secondary: #0F120D; /* Very Dark Camo Green */
+        --fitpro-accent: #D4FF00; /* High-Vis Volt (Sport Energy) */
+        
+        --bg-dark: #0a0c0a; /* Almost Black Green */
+        --bg-medium: #151915; /* Dark Armor Gray/Green */
+        --bg-light: #232923; /* Lighter Armor */
+        
+        --border-color: #3E4A3E; /* Tactical Border */
+        --border-highlight: #6B7A58; /* Khaki Highlight */
+        
+        --text-primary: #E0E2DB; /* Off-White / Bone */
+        --text-secondary: #8F9A8C; /* Muted Green-Gray */
+        
+        /* Accents mapped to military contexts */
+        --accent-blue: #3B82F6; /* Retain for info, but desaturated slightly in context */
+        --accent-green: var(--fitpro-accent);
+        --accent-orange: #F97316;
+        --accent-red: #EF4444;
+        
+        --glow-green: rgba(212, 255, 0, 0.3);
+        --glow-olive: rgba(85, 107, 47, 0.5);
+      }
+      
+      /* Base App Body Style - Military Texture */
+      body.app-dashboard, body.auth-page {
+        font-family: 'Vazirmatn', sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-primary);
+        /* Subtle Camo/Noise Pattern Overlay */
+        background-image: 
+          radial-gradient(circle at 50% 50%, rgba(85, 107, 47, 0.05) 0%, transparent 60%),
+          repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 10px);
+        background-attachment: fixed;
+      }
+      
+      h1, h2, h3, h4, h5, h6, .font-heading, button, input, select, textarea {
+        font-family: 'Vazirmatn', sans-serif !important;
+      }
+
+      /* Scrollbar - Tactical */
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: var(--bg-dark); }
+      ::-webkit-scrollbar-thumb { background: var(--fitpro-primary); border-radius: 2px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--fitpro-accent); }
+
+      /* TACTICAL CARD STYLE - "Armored Panel" */
+      .energetic-card {
+        background: var(--bg-medium);
+        /* Rugged Borders */
+        border: 1px solid var(--border-color);
+        border-left: 3px solid var(--fitpro-primary); /* Left accent border */
+        border-radius: 0.5rem; /* Tighter radius (8px) for tactical look */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        transition: all 0.2s ease-in-out;
+      }
+
+      .energetic-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--border-highlight);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+      }
+
+      /* BUTTONS - "Mission Ready" */
+      .btn-primary {
+        background: linear-gradient(180deg, var(--fitpro-primary) 0%, #3e4e22 100%);
+        color: white;
+        font-weight: 800;
+        text-transform: uppercase;
+        border-radius: 0.375rem; /* 6px */
+        border: 1px solid #6B7A58;
+        padding: 0.75rem 1.5rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .btn-primary:hover {
+        background: linear-gradient(180deg, #627a36 0%, #4a5d23 100%);
+        box-shadow: 0 0 15px var(--glow-olive);
+        border-color: var(--fitpro-accent);
+      }
+
+      /* Secondary Button - "Stealth" */
+      .btn-secondary {
+        background-color: rgba(255,255,255,0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 0.375rem;
+        color: var(--text-secondary);
+        transition: all 0.2s ease;
+      }
+      .btn-secondary:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: white;
+        border-color: var(--text-secondary);
+      }
+
+      /* Input Styles - "Console Input" */
+      .input-styled {
+        background-color: rgba(0,0,0,0.3);
+        border: 1px solid var(--border-color);
+        border-radius: 0.375rem;
+        color: var(--text-primary);
+        font-family: monospace, 'Vazirmatn'; /* Tech feel */
+        transition: border-color 0.2s ease;
+      }
+      .input-styled:focus {
+        outline: none;
+        border-color: var(--fitpro-accent);
+        box-shadow: 0 0 0 1px var(--fitpro-accent);
+        background-color: rgba(0,0,0,0.5);
+      }
+      
+      /* Progress Bar - "High Vis" */
+      progress, .progress-bar-bg {
+        border-radius: 2px;
+        overflow: hidden;
+        background-color: rgba(0,0,0,0.5);
+      }
+      progress::-webkit-progress-value {
+        background: var(--fitpro-accent);
+        box-shadow: 0 0 10px var(--glow-green);
+      }
+      
+      /* Recharts Customization to fit dark theme */
+      .recharts-tooltip-wrapper {
+        background: var(--bg-medium) !important;
+        border: 1px solid var(--fitpro-primary) !important;
+        border-radius: 4px !important;
+        color: var(--text-primary) !important;
+      }
+      
+      /* Ticker Animation */
+      .ticker-container {
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        background: rgba(0,0,0,0.4);
+      }
+
+      /* Glow Effects */
+      .glowing-green {
+        box-shadow: 0 0 10px var(--glow-green);
+        border-color: var(--fitpro-accent);
+      }
+      
+      /* Tactical Grid Lines (Optional BG decor) */
+      .bg-grid-pattern {
+        background-size: 20px 20px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      }
+
+      /* Coach/Contact Button Glow - Sporty Pulse */
+      @keyframes radar-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(212, 255, 0, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(212, 255, 0, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(212, 255, 0, 0); }
+      }
+
+      .btn-contact-glow, .btn-coach-glow {
+        animation: radar-pulse 2s infinite;
+        background-color: var(--fitpro-accent);
+        color: black !important;
+      }
+      
+      /* Level Glows */
+      .level-glow-semi-pro {
+        border: 1px solid #3b82f6;
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+      }
+      .level-glow-professional {
+        border: 1px solid #eab308;
+        box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
+    "axios": "https://aistudiocdn.com/axios@^1.13.2",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.86.0",
+    "@vercel/node": "https://aistudiocdn.com/@vercel/node@^5.5.13",
+    "cors": "https://esm.sh/cors@^2.8.5",
+    "express": "https://esm.sh/express@^5.2.1",
+    "dotenv": "https://esm.sh/dotenv@^17.2.3",
+    "jsonwebtoken": "https://esm.sh/jsonwebtoken@^9.0.3",
+    "bcrypt": "https://esm.sh/bcrypt@^6.0.0",
+    "pg": "https://esm.sh/pg@^8.16.3",
+    "nodemailer": "https://esm.sh/nodemailer@^7.0.11",
+    "morgan": "https://esm.sh/morgan@^1.10.1",
+    "express-rate-limit": "https://esm.sh/express-rate-limit@^8.2.1",
+    "helmet": "https://esm.sh/helmet@^8.1.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.10.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-grid-pattern h-full">
+    <div id="root" class="h-screen w-screen flex flex-col"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
